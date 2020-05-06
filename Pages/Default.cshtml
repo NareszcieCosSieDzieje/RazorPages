@@ -1,0 +1,40 @@
+﻿@page
+@model Lab_9.Pages.DefaultModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+
+}
+
+<div class="formContainer">
+
+    <form class="forms" action="./Name" method="get">
+        <label for="fnameGet">Podaj imię:</label>
+        <input type="text" id="fnameGet" name="fnameGet"><br><br>
+        <input type="submit" value="Submit via GET">
+    </form>
+
+    <form class="forms" action="./Name" method="post">
+        <label for="fnamePost">Podaj imię:</label>
+        <input type="text" id="fnamePost" name="fnamePost"><br><br>
+        <input type="submit" value="Submit via POST">
+        @Html.AntiForgeryToken();
+</div>
+
+
+<ul>
+    <!--<li><a href="@Url.Page("./Name")">Imiona</a></li>-->
+    <li><a href="@Url.Page("./Rules")">Zasady</a></li>
+</ul>
+
+<style>
+    .formContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .forms {
+        margin: 10px;
+    }
+</style>

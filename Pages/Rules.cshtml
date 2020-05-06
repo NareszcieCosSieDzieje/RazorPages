@@ -1,0 +1,36 @@
+﻿@page
+@model Lab_9.Pages.RulesModel
+@{
+    ViewData["Title"] = "Rules";
+}
+
+
+    <form action="" method="post">
+        <!--action="/action_page.php"-->
+        <label for="ruleField">Podaj zasadę:</label>
+        <input type="text" id="ruleField" name="ruleField" />
+        <br />
+        <br />
+        <input type="submit" id="submitRule" name="submitRule" value="Submit rule via POST" />
+        @Html.AntiForgeryToken();
+    </form>
+
+<br />
+
+<ol>
+    @{ if (Model.rulesList.Count == 0)
+        {
+            <li>Brak zasad</li>
+        }
+        else
+        {
+            foreach (var r in Model.rulesList)
+            {
+                <li>@r</li>
+            }
+        }
+    }
+</ol>
+
+<br />
+<a href="@Url.Page("./Default")">Wróć</a>

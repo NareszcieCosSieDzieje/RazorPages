@@ -1,0 +1,21 @@
+﻿@page
+@model Lab_9.NameModel
+@{
+
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Name Page";
+
+}
+
+<!--  <p> at ViewData["Title"]</p>  -->
+
+<ul>
+    @for (int i = 0; i < 10; i++)
+    {
+        <li>"His name is " + @Model.name</li>
+    }
+</ul>
+
+
+<br />
+<a href="@Url.Page("./Default")">Wróć</a>

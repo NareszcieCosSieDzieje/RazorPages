@@ -29,6 +29,15 @@ namespace Lab_9.Pages
                 rulesList = binFormatter.Deserialize(mStream) as List<string>;
             }
             else {
+
+                rulesList.Add("You do not talk about Fight Club.");
+                rulesList.Add("You DO NOT talk about Fight Club.");
+                rulesList.Add("The fight is over once a person yells ''stop'', taps out, or goes limp.");
+                rulesList.Add("Only two guys are involved in a fight.");
+                rulesList.Add("Only one fight occurs at a time.");
+                rulesList.Add("No shirt, no shoes.");
+                rulesList.Add("There is no time allotment associated with the fights.They go on until they end.");
+                rulesList.Add("First timers at the club must fight.");
                 binFormatter.Serialize(mStream, rulesList);
                 HttpContext.Session.Set("rules", mStream.ToArray());
             }

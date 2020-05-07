@@ -10,16 +10,32 @@ namespace Lab_9
     public class NameModel : PageModel
     {
         //[BindProperty]
-        public String name { get; set; } = "Robert  Paulson";
+        public String name { get; set; } = "";
 
         public void OnGet()
         {
-            name = Request.Query["fnameGet"];
+            var getName = Request.Query["fnameGet"];
+            if (string.IsNullOrEmpty(getName))
+            {
+                name = "Robert  Paulson";
+            }
+            else {
+                name = getName;
+            }
+            
         }
 
         public void OnPost()
-        {
-            name = Request.Form["fnamePost"];
+        { 
+            var postName = Request.Form["fnamePost"];
+            if (string.IsNullOrEmpty(postName))
+            {
+                name = "Robert  Paulson";
+            }
+            else
+            {
+                name = postName;
+            }
         }
 
     }

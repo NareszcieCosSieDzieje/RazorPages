@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\Images\Arc1.png" />
+    <None Include="wwwroot\Images\Arc2.png" />
   </ItemGroup>
 
   <ItemGroup>
